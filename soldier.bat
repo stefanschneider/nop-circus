@@ -6,7 +6,7 @@ IF !%1==! (
 )
 
 set destPath=%1
-cd %destPath%
+cd "%cd%\%destPath%"
 
 rem shift arguments http://stackoverflow.com/questions/9363080/how-to-make-shift-work-with-in-batch-files
 shift
