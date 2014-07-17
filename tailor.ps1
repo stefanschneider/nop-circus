@@ -1,5 +1,7 @@
 $first_buildpack_key = ""
 
+Write-Host "Running nop tailor"
+
 foreach ($arg in $script:args) {
   Write-OUtput $arg
   if ($arg.StartsWith("-buildpackOrder")){
@@ -7,7 +9,6 @@ foreach ($arg in $script:args) {
   }
 }
 
-Write-Host "Running nop tailor"
 mkdir -force tmp\droplet\app > out-null
 
 xcopy app tmp\droplet\app /s /e /i /h
