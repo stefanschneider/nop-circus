@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"net"
 	"os"
 	"time"
@@ -27,7 +28,7 @@ var timeout = flag.Duration(
 
 func main() {
 	flag.Parse()
-
+	
 	port := os.Getenv("NETIN_PORT")
 	if len(port) != 0 {
 		*addr = "127.0.0.1:" + port
@@ -35,12 +36,12 @@ func main() {
 
 	conn, err := net.DialTimeout(*network, *addr, *timeout)
 	if err != nil {
-		println(err.Error())
+		fmt.Println("healthcheck failed")
 		os.Exit(1)
 	}
 
 	conn.Close()
 
-	println("ok")
+	fmt.Println("healthcheck passed")
 	os.Exit(0)
 }
