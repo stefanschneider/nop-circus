@@ -1,2 +1,2 @@
 @echo off
-powershell -File %~dp0\tailor.ps1 %*
+powershell -NonInteractive -NoProfile -File %~dp0\tailor.ps1 %*
