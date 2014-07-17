@@ -19,4 +19,4 @@ echo nop >> tmp\cache\nop
 
 mkdir -force tmp\result
 
-echo "{""buildpack_key"": ""$first_buildpack_key"", ""detected_buildpack"": ""dummy-buildpack"", ""detected_start_command"": ""start""}" > tmp\result\result.json
+[System.IO.File]::WriteAllText("tmp\result\result.json", "{""buildpack_key"": ""$first_buildpack_key"", ""detected_buildpack"": ""dummy-buildpack"", ""detected_start_command"": ""start""}")
