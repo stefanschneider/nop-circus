@@ -1,10 +1,8 @@
 $first_buildpack_key = ""
 
 foreach ($arg in $script:args) {
+  Write-OUtput $arg
   if ($arg.StartsWith("-buildpackOrder")){
-      echo $arg
-      echo $arg.TrimStart("-buildpackOrder=")
-      echo $arg.TrimStart("-buildpackOrder=").Split(",")[0]
       $first_buildpack_key = $arg.TrimStart("-buildpackOrder=").Split(",")[0]
   }
 }
