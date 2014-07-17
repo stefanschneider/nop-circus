@@ -8,7 +8,7 @@ mkdir tmp\cache
 echo nop > tmp\cache\nop
 
 mkdir tmp\result
-echo {"detected_buildpack": "dummy-buildpack", "detected_start_command": "start"} > tmp\result\result.json
+echo|set /p={"detected_buildpack": "dummy-buildpack", "detected_start_command": "start"} > tmp\result\result.json
 rem echo --- > tmp\result\staging_info.yml
 
 exit /B 0
